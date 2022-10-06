@@ -220,3 +220,15 @@ output_path = Path("inexpensive_loans.csv")
 # @TODO: Use the csv library and `csv.writer` to write the header row
 # and each row of `loan.values()` from the `inexpensive_loans` list.
 # YOUR CODE HERE!
+ # Open the output path as a file object 
+with open(output_path, "w") as csvfile:   
+  # Create a csvwriter   
+   csvwriter = csv.writer(csvfile, delimiter=",")   
+#   Write the header to the output file  
+   csvwriter.writerow(header)   
+#  # Loop through loan in the list of `inexpensive_loans`   
+#  # and write the loan values to the csv    
+   for loan in inexpensive_loans:     
+
+#    # Write the list of metrics to the output file     
+     csvwriter.writerow(loan.values())
